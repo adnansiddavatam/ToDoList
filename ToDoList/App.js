@@ -1,20 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// App.jsx
+import React from 'react';
+import { SafeAreaView, StyleSheet, View, TextInput, Button } from 'react-native';
+import ToDoList from './components/ToDoList';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+ 
+  const [tasks] = useState([
+    'Do laundry',
+    'Go to park',
+    'Walk dog'
+  ]);
+ 
+    return (
+        <SafeAreaView>
+            <ToDoList tasks={tasks} />
+            <ToDoForm />
+        </SafeAreaView>
+    );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
