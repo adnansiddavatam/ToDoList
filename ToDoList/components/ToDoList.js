@@ -2,19 +2,16 @@ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
 export default function ToDoList({ tasks }) {
-    return (
-        <View style={styles.task}>
-          <Text>Task List</Text>
-          <View style={styles.taskText}>
-            {tasks.map((task, index) => (
-              <Text key={index}>{task}</Text>
-            ))}
-          </View>
+  return (
+    <ScrollView>
+      {tasks.map((task, index) => (
+        <View key={index} style={styles.task}>
+          <Text style={styles.taskText}>{task}</Text>
         </View>
-    );
-}
-
-
+      ))}
+    </ScrollView>
+  );
+};
 const styles = StyleSheet.create({
     task: {
         padding: 10,
