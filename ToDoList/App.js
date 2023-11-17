@@ -11,11 +11,26 @@ export default function App() {
     'Go to gym',
     'Walk dog'
   ]);
+
+  const addTask = (taskText) => {
+    setTasks([...tasks, taskText]);
+  };
  
     return (
         <SafeAreaView>
             <ToDoList tasks={tasks} />
-            <ToDoForm />
+            <ToDoForm addTask = {addTask} />
         </SafeAreaView>
     );
 }
+
+const styles = StyleSheet.create({
+
+  form: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginHorizontal: 20,
+    marginTop: 20,
+  },
+});
